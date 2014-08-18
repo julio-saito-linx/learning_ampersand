@@ -7,6 +7,7 @@
     "ampersand": "^1.10.0",
     "ampersand-router": "^1.0.2",
     "ampersand-view": "^6.0.10",
+    "ampersand-view-switcher": "^1.0.2",
     "domready": "^1.0.6",
     "hapi": "^6.5.1",
     "lodash": "^2.4.1",

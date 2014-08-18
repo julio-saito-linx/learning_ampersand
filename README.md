@@ -21,11 +21,27 @@ npm i ampersand-router --save
 
 ####/client/app.js
  - Ponto de entrada da aplicação
+ - Cria uma variável global chamada app, que podemos chamar de qualquer lugar
 
-####/client/main-view.js
+####/client/router.js
+ - Gerenciamento de rotas
+ - Instancia as paginas e manda para o evento global 'page'
+
+####/client/view/main.js
  - View principal, possui o body, por exemplo.
  - Vai conter todas as outras views dentro dela
  - Serve para gerenciar eventos gerais
+ - Escuta o evento geral e usando o ViewSwitcher, carrega as páginas que o router mandar
+
+####Views possem seletores
+```
+ get('#elementId')     => $('#elementId')[0]
+ getAll('.className')  => $('.className')
+ getByRole('roleName') => $('[role=roleName]')[0]
+```
+
+####/client/pages/ ... home.js, ...
+ - Páginas são views que representam as rotas
 
 ####Pages vs Views
  - Pages são Views

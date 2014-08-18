@@ -1,5 +1,5 @@
 'use strict';
-var MainView = require('./pages/main');
+var MainView = require('./views/main');
 var Router = require('./router');
 var Tracer = require('./tracer/mogger-tracer');
 
@@ -15,19 +15,20 @@ window.app = {
 
 		this.router = new Router();
 		
+		domready(this.start.bind(this));
+	},
+
+	start: function() {
+		// a view principal
+		// escuta o evento 'page' do router
+		this.mainView = new MainView({
+			el: document.body
+		});
+
 		// inicia o router principal, lê a URL e casa com a configuração de rotas
 		// pushState: true -> para usar # (hashes)
 		// para forçar alguma navegação use o this.router.history.navigate(url, {trigger: true})
 		this.router.history.start({pushState: true});
-
-		
-		domready(this.renderMainView.bind(this));
-	},
-
-	renderMainView: function() {
-		this.mainView = new MainView({
-			el: document.body
-		});
 	}
 };
 
