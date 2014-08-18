@@ -26,3 +26,8 @@ npm i ampersand-router --save
  - View principal, possui o body, por exemplo.
  - Vai conter todas as outras views dentro dela
  - Serve para gerenciar eventos gerais
+
+####Pages vs Views
+ - Pages são Views
+ - Pages são utilizadas para organização
+

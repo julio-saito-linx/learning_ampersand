@@ -1,21 +1,17 @@
 'use strict';
 var Mogger = require('mogger');
 var _ = require('lodash');
-
-
-
 /*
-
-usefull links
------------------
-test: https://github.com/saitodisse/mogger/blob/master/test/mogger.test.js
-usage: https://github.com/saitodisse/mogger/blob/gh-pages/examples/todo-mvc-backbone-require/js/mogger-example/mogger-example.js
------------------
-
+	usefull links
+	-----------------
+	test: https://github.com/saitodisse/mogger/blob/master/test/mogger.test.js
+	usage: https://github.com/saitodisse/mogger/blob/gh-pages/examples/todo-mvc-backbone-require/js/mogger-example/mogger-example.js
+	-----------------
 */
 
+
 // all targets
-var MainView = require('../main-view');
+var MainView = require('../pages/main');
 var Router = require('../router');
 var surrogateTargetsSource = {
 	'MainView.prototype': MainView.prototype,
@@ -62,7 +58,7 @@ _.assign(MoggerTracer.prototype, {
 			},
 			targetConfig: {
 				//css: 'color: red',
-				size: 45
+				size: 30
 			},
 			showArguments: true,
 

@@ -1,5 +1,5 @@
 'use strict';
-var MainView = require('./main-view');
+var MainView = require('./pages/main');
 var Router = require('./router');
 var Tracer = require('./tracer/mogger-tracer');
 
