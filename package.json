@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "ampersand": "^1.10.0",
+    "ampersand-view": "^6.0.10",
     "hapi": "^6.5.1",
     "moonboots_hapi": "^2.4.0"
   },

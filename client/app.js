@@ -1,3 +1,5 @@
+var 
+
 // arquivo de entrada "entry-point"
 window.app = {
 	init: function(){
