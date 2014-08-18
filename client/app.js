@@ -1,13 +1,19 @@
-var 
+var MainView = require('./main-view');
+
+// espera que a página esteja carregada e chama o callback
+// o mesmo que utilizar o $.ready(function() { ... })
+var domready = require('domready');
 
 // arquivo de entrada "entry-point"
 window.app = {
 	init: function(){
-		var debugMessage = 'window.app.init() executed';
-		console.log(debugMessage);
+		domready(this.renderMainView.bind(this));
+	},
 
-		//ERRO: document.body ainda não existe!
-		//document.body.innerHTML = debugMessage;
+	renderMainView: function() {
+		this.mainView = new MainView({
+			el: document.body
+		});
 	}
 };
 

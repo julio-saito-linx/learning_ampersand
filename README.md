@@ -13,4 +13,4 @@ npm i hapi moonboots_hapi ampersand  --save
 Ponto de entrada da aplicação
 
 ####/client/main-view.js
-Piew principal, possui o body, por exemplo.
+View principal, possui o body, por exemplo.
