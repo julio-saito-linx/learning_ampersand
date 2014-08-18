@@ -6,5 +6,5 @@ lessons from videos in http://learn.humanjavascript.com/
 
 ```
 npm init
-npm i ampersand hapi --save
+npm i hapi moonboots_hapi ampersand  --save
 ```
