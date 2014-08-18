@@ -3,6 +3,17 @@ var Mogger = require('mogger');
 var _ = require('lodash');
 
 
+
+/*
+
+usefull links
+-----------------
+test: https://github.com/saitodisse/mogger/blob/master/test/mogger.test.js
+usage: https://github.com/saitodisse/mogger/blob/gh-pages/examples/todo-mvc-backbone-require/js/mogger-example/mogger-example.js
+-----------------
+
+*/
+
 // all targets
 var MainView = require('../main-view');
 var Router = require('../router');
@@ -10,6 +21,8 @@ var surrogateTargetsSource = {
 	'MainView.prototype': MainView.prototype,
 	'Router.prototype': Router.prototype
 };
+
+
 
 
 var MoggerTracer = function (){};
@@ -58,52 +71,30 @@ _.assign(MoggerTracer.prototype, {
 			//-------------------------------------------------------
 			interceptors: [
 			{
-				filterRegex: /^(trigger|get|has|\$|setFilter|_on\w+|render|sync|previous|_routeToRegExp|setElement)/i,
+				filterRegex: /^(trigger|get|has|\$|setFilter|_on\w+|render\b|sync|previous|_routeToRegExp|setElement)/i,
 				callback: function(info) {
 					return info.method + '("' + info.args[0] + '")';
 				}
 			},
-			{
-				filterRegex: /^(on)/i,
-				callback: function(info) {
-					return '^ ' + info.method + '("' + info.args[0] + '")';
-				}
-			},
-			{
-				filterRegex: /^(listenTo)/i,
-				callback: function(info) {
-					return 'v ' + info.method + '("' + info.args[1] + '")';
-				}
-			},
-			{
-				filterRegex: /^(route)/i,
-				callback: function(info) {
-					return info.method + '("' + info.args[1] + '")';
-				}
-			},
-			{
-				filterRegex: /^(set)/i,
-				callback: function(info) {
-					if(_.isString(info.args[0])){
-						return info.method + '("' + info.args[0] + '")';	
-					}
-					else{
-						return info.method;
-					}
-					
-				}
-			}
 			]
 		});
 
+
+
+		/*
+			Objects to trace
+			use pointcut: /./ to trace all functions
+		*/
 		tracer.traceObj({
 			before: {	message: 'MainView', css: 'color: #A42' },
-			target: 'MainView.prototype', targetConfig: {	css: 'color: #A42' }
+			target: 'MainView.prototype', targetConfig: {	css: 'color: #A42' },
+			pointcut: /renderWithTemplate/
 		});
 
 		tracer.traceObj({
 			before: {	message: 'Router', css: 'color: #55A' },
-			target: 'Router.prototype', targetConfig: {	css: 'color: #55A' }
+			target: 'Router.prototype', targetConfig: {	css: 'color: #55A' },
+			pointcut: /trigger/
 		});
 
 		//2A2, 075, 249, 

@@ -8,11 +8,9 @@ module.exports = Router.extend({
 	},
 
 	home: function() {
-		console.log('I\'m home');
 	},
 
 	list: function() {
-		console.log('I\'m list');
 	},
 
 });
