@@ -6,9 +6,17 @@ lições aprendidas no curso: http://learn.humanjavascript.com/
 ####Instalações iniciais
 ```
 npm init
+
+# Mogger
+npm i mogger lodash --save
+
+# HAPI
 npm i hapi moonboots_hapi  --save
+
+# Ampersand
 npm i ampersand ampersand-view domready --save
 npm i ampersand-router --save
+
 ```
 
 ####/client/app.js

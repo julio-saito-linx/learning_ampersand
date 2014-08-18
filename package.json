@@ -9,6 +9,8 @@
     "ampersand-view": "^6.0.10",
     "domready": "^1.0.6",
     "hapi": "^6.5.1",
+    "lodash": "^2.4.1",
+    "mogger": "0.0.73",
     "moonboots_hapi": "^2.4.0"
   },
   "devDependencies": {},

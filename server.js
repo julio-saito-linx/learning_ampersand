@@ -1,9 +1,10 @@
+'use strict';
 var hapi = require('hapi');
 var moonboots = require('moonboots_hapi');
 
 //localhost: apenas para essa maquina
 //0.0.0.0: permite que o site seja visto de fora
-var HOST_NAME = '0.0.0.0'
+var HOST_NAME = '0.0.0.0';
 var PORT = 8888;
 
 // cria o servidor do HAPI

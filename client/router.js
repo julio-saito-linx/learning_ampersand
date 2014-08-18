@@ -1,3 +1,4 @@
+'use strict';
 var Router = require('ampersand-router');
 
 module.exports = Router.extend({
@@ -14,4 +15,4 @@ module.exports = Router.extend({
 		console.log('I\'m list');
 	},
 
-})
+});
