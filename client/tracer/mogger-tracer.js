@@ -80,7 +80,6 @@ _.assign(MoggerTracer.prototype, {
 		});
 
 
-
 		/*
 			Objects to trace
 			use pointcut: /./ to trace all functions
