@@ -1,0 +1,8 @@
+{
+	"isDev": true,
+	
+	//localhost: apenas para essa maquina
+	//0.0.0.0: permite que o site seja visto de fora
+	"host_name": "0.0.0.0",
+	"port": 8888
+}

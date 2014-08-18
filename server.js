@@ -1,14 +1,10 @@
 'use strict';
 var hapi = require('hapi');
 var moonboots = require('moonboots_hapi');
-
-//localhost: apenas para essa maquina
-//0.0.0.0: permite que o site seja visto de fora
-var HOST_NAME = '0.0.0.0';
-var PORT = 8888;
+var config = require('getconfig');
 
 // cria o servidor do HAPI
-var server = hapi.createServer(PORT, HOST_NAME);
+var server = hapi.createServer(config.port, config.host_name);
 
 server.pack.register({
 	plugin: moonboots,
@@ -19,10 +15,10 @@ server.pack.register({
 		// esta configuração é enviada para o plugin moonboots_hapi
 		moonboots: {
 			main: __dirname + '/client/app.js',
-			developmentMode: true
+			developmentMode: config.isDev
 		}
 	}
 }, function() {
 	server.start();
-	console.log('running server on port', PORT);
+	console.log('running server on http://' + config.host_name + ':' + config.port);
 });

@@ -16,8 +16,19 @@ npm i hapi moonboots_hapi  --save
 # Ampersand
 npm i ampersand ampersand-view domready --save
 npm i ampersand-router --save
+npm i getconfig --save
 
 ```
+
+####MoonBoots
+ - Exibe apenas um script na saída
+ - Quando em developmentMode, envia o javascript e o CSS sem compactação
+ - Quando em developmentMode=false, os arquivos são minificados
+ - Quando em developmentMode=false, o nome dos arquivos é alterados quando ocorre alguma mudança
+
+####getconfig
+ - Busca variável NODE_ENV
+ - 
 
 ####/client/app.js
  - Ponto de entrada da aplicação
