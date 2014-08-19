@@ -64,8 +64,9 @@ npm i templatizer --save
      + origiem dos templates JADE
      + destino do arquivo JS
 
-
-
+####[stylizer](https://github.com/HenrikJoreteg/templatizer)
+ - Compila templates .styl para um css geral
+ - Compatível com [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related) 
 =====================
 ## Main App
 
