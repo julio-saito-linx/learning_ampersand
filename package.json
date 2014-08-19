@@ -14,6 +14,7 @@
     "lodash": "^2.4.1",
     "mogger": "0.0.73",
     "moonboots_hapi": "^2.4.0",
+    "stylizer": "^1.0.0",
     "templatizer": "^1.0.0"
   },
   "devDependencies": {},

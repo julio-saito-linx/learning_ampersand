@@ -38,21 +38,19 @@ module.exports = View.extend({
 
 	// Qualquer click num link <a href=":::"> será capturado
 	handleLinkClick: function (e) {
-		var localTarget = e.target.host === window.location.host;
-		if (localTarget) {
+		var aTag = e.target;
+		var localhost_name = window.location.host;
+		var isLinkingToLocalHost = aTag.host === localhost_name;
+		if (isLinkingToLocalHost) {
 			// apenas links locais serão modificados
 			
-			// "http://localhost:8888/list"
-			var fullNewLocation = e.target.href; 
-			
-			// "/list"
-			var partialNewLocation = e.target.href.replace('http://' + e.target.host, '');
+			// Ex: /list
+			var partialNewLocation = aTag.pathname;
 			
 			app.router.history.navigate(partialNewLocation, { trigger:true });
 
 			// não permite que seja propagado
 			e.preventDefault();
-			return false;
 		}
 	}
 });

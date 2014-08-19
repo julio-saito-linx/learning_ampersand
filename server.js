@@ -3,6 +3,7 @@ var hapi = require('hapi');
 var moonboots = require('moonboots_hapi');
 var config = require('getconfig');
 var templatizer = require('templatizer');
+var stylizer = require('stylizer');
 
 // cria o servidor do HAPI
 var server = hapi.createServer(config.port, config.host_name);
@@ -20,7 +21,8 @@ server.pack.register({
 			
 			//CSS
 			stylesheets: [
-				__dirname + '/public/bootstrap.css'
+				__dirname + '/public/bootstrap.css',
+				__dirname + '/public/app.css',
 			],
 
 			//compila os templates JADE
@@ -33,7 +35,22 @@ server.pack.register({
 					//}, 1000)
 					
 				}
+			},
+
+			beforeBuildCSS: function(done) {
+				if(!config.isDev){
+					// se não estiver em DEV já cai fora daqui
+					return done();
+				}
+
+				stylizer({
+					infile: 	 __dirname + '/public/app/main.styl',
+					outfile:	 __dirname + '/public/app.css',
+					development: true,
+					watch:       __dirname + '/public/app/**/*.styl'
+				}, done)
 			}
+
 		}
 	}
 }, function() {

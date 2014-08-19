@@ -24,5 +24,10 @@
         return "<!DOCTYPE html><section><h1>HOME PAGE</h1><p>This is home</p></section>";
     };
 
+    // pages/list.jade compiled template
+    templatizer["pages"]["list"] = function tmpl_pages_list() {
+        return "<!DOCTYPE html><section><h1>LIST PAGE</h1><p>This is some list</p><ul><li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li></ul></section>";
+    };
+
     return templatizer;
 }));
