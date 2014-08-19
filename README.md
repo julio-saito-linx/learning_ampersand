@@ -1,9 +1,12 @@
 Aprendendo Ampersand.js
 =======================
+Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
-lições aprendidas no curso: http://learn.humanjavascript.com/
+![Aprendendo_Ampersand][github]
 
-####Instalações iniciais
+##Instalações iniciais
+=====================
+####npm
 ```
 npm init
 
@@ -26,10 +29,10 @@ npm i getconfig --save
  - Quando em developmentMode=false, os arquivos são minificados
  - Quando em developmentMode=false, o nome dos arquivos é alterados quando ocorre alguma mudança
 
-####getconfig
- - Busca variável NODE_ENV
- - 
 
+
+##Main App, Router...
+=====================
 ####/client/app.js
  - Ponto de entrada da aplicação
  - Cria uma variável global chamada app, que podemos chamar de qualquer lugar
@@ -38,6 +41,17 @@ npm i getconfig --save
  - Gerenciamento de rotas
  - Instancia as paginas e manda para o evento global 'page'
 
+####getconfig
+ - https://github.com/HenrikJoreteg/clientconfig
+ - Busca variável NODE_ENV
+ - dev_config.json, production_config.json, ...
+ - grava as informações em cookies para acesso no cliente
+
+
+
+
+##Views
+=====================
 ####/client/view/main.js
  - View principal, possui o body, por exemplo.
  - Vai conter todas as outras views dentro dela
