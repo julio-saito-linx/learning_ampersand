@@ -6,6 +6,9 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 ## Indice
 * [Human Javascript](#human-javascript)
 * [Instalacao](#instalacao)
+  + [moonboots](#moonboots)
+  + [templatizer](#templatizer)
+  + [stylizer](#stylizer)
 * [Main App](#main-app)
 * [Views](#views)
 
