@@ -8,6 +8,18 @@ var stylizer = require('stylizer');
 // cria o servidor do HAPI
 var server = hapi.createServer(config.port, config.host_name);
 
+server.route({
+	method: 'GET',
+	path: '/api/me',
+	handler: function(request, reply) {
+		reply({
+			givenName: 'Julio',
+			familyName: 'Saito',
+			email: 'saitodisse@gmail.com'
+		})
+	}
+})
+
 server.pack.register({
 	plugin: moonboots,
 	options: {
