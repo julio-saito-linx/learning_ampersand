@@ -16,6 +16,7 @@ module.exports = View.extend({
 	
 	initialize: function() {
 		this.listenTo(app.router, 'page', this.handleNewPage);
+		this.listenTo(this.model, 'change:fullName', this.fullNameChanged);
 	},
 
 	render: function() {
@@ -71,5 +72,10 @@ module.exports = View.extend({
 		 		break;
 		 	}
 		};
+	},
+
+	fullNameChanged: function(ele, value) {
+		var pUserName = this.getByRole('user-name');
+		pUserName.innerHTML = value;
 	}
 });

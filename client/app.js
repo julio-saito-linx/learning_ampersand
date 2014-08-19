@@ -2,7 +2,7 @@
 var MainView = require('./views/main');
 var Router = require('./router');
 var Tracer = require('./tracer/mogger-tracer');
-var Me = require('./models/me')
+var Me = require('./models/me');
 
 // espera que a página esteja carregada e chama o callback
 // o mesmo que utilizar o $.ready(function() { ... })
@@ -32,7 +32,8 @@ window.app = {
 		// a view principal
 		// escuta o evento 'page' do router
 		this.mainView = new MainView({
-			el: document.body
+			el: document.body,
+			model: window.me
 		});
 
 		// inicia o router principal, lê a URL e casa com a configuração de rotas

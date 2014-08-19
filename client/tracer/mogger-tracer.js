@@ -13,6 +13,7 @@ var _ = require('lodash');
 // all targets //////////////////////////////////////////
 
 var MainView = require('../views/main');
+var Me = require('../models/me');
 var HomePage = require('../pages/home');
 var ListPage = require('../pages/list');
 var Router = require('../router');
@@ -21,6 +22,7 @@ var ViewSwitcher = require('ampersand-view-switcher');
 
 var surrogateTargetsSource = {
 	'MainView.prototype': MainView.prototype,
+	'Me.prototype': Me.prototype,
 	'HomePage.prototype': HomePage.prototype,
 	'ListPage.prototype': ListPage.prototype,
 	'Router.prototype': Router.prototype,
@@ -76,7 +78,7 @@ _.assign(MoggerTracer.prototype, {
 			//-------------------------------------------------------
 			interceptors: [
 			{
-				filterRegex: /^(trigger|get|has|\$|setFilter|_on\w+|render\b|sync|previous|_routeToRegExp|setElement)/i,
+				filterRegex: /^(trigger|get|has|\$|setFilter|on|_on\w+|render\b|sync|previous|_routeToRegExp|setElement|_getCompareForType)/i,
 				callback: function(info) {
 					return info.method + '("' + info.args[0] + '")';
 				}
@@ -102,6 +104,12 @@ _.assign(MoggerTracer.prototype, {
 			before: {	message: 'MainView', css: 'color: #A42' },
 			target: 'MainView.prototype', targetConfig: {	css: 'color: #A42' },
 			pointcut: /renderWithTemplate/
+		});
+
+		tracer.traceObj({
+			before: {	message: 'Me', css: 'color: #2A2' },
+			target: 'Me.prototype', targetConfig: {	css: 'color: #2A2' },
+			pointcut: /./
 		});
 
 		tracer.traceObj({
