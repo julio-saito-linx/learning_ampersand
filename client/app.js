@@ -2,6 +2,7 @@
 var MainView = require('./views/main');
 var Router = require('./router');
 var Tracer = require('./tracer/mogger-tracer');
+var Me = require('./models/me')
 
 // espera que a página esteja carregada e chama o callback
 // o mesmo que utilizar o $.ready(function() { ... })
@@ -10,6 +11,9 @@ var domready = require('domready');
 // arquivo de entrada "entry-point"
 window.app = {
 	init: function(){
+
+		window.me = new Me();
+
 		var tracer = new Tracer();
 		tracer.startTracing();
 

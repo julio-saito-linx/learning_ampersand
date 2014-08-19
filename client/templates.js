@@ -16,7 +16,7 @@
 
     // body.jade compiled template
     templatizer["body"] = function tmpl_body() {
-        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">Body View</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">Home</a></li><li><a href="/list">List</a></li></ul></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
+        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">Body View</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">Home</a></li><li><a href="/list/111">List</a></li></ul></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
     };
 
     // pages/home.jade compiled template

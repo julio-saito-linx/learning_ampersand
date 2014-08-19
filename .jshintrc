@@ -5,7 +5,9 @@
 	"predef": [
         "define",
         "module",
-        "app"
+        "app",
+        "me",
+        "$"
     ],
 
 	"boss": true,

@@ -13,6 +13,7 @@ server.route({
 	path: '/api/me',
 	handler: function(request, reply) {
 		reply({
+			id: '12345',
 			givenName: 'Julio',
 			familyName: 'Saito',
 			email: 'saitodisse@gmail.com'
@@ -31,7 +32,12 @@ server.pack.register({
 			main: __dirname + '/client/app.js',
 			developmentMode: config.isDev,
 			
-			//CSS
+			//JS
+			libraries: [
+		        __dirname + '/node_modules/jquery-browserify/lib/jquery.js'
+		    ],
+
+    		//CSS
 			stylesheets: [
 				__dirname + '/public/bootstrap.css',
 				__dirname + '/public/app.css',

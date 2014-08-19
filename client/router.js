@@ -6,7 +6,7 @@ var ListPage = require('./pages/list');
 module.exports = Router.extend({
 	routes: {
 		'': 'home',
-		'list': 'list'
+		'list/:id': 'list'
 	},
 
 	home: function() {
