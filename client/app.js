@@ -12,13 +12,19 @@ var domready = require('domready');
 window.app = {
 	init: function(){
 
+		// me = Model
+		// este modelo guarda as informações do usuário que está logado
+		// por isso, para facilitar, ele é global
 		window.me = new Me();
 
+		// Mogger
 		var tracer = new Tracer();
 		tracer.startTracing();
 
+		// Gerenciamento de Rotas
 		this.router = new Router();
 		
+		// mesma coisa que o $.ready
 		domready(this.start.bind(this));
 	},
 
