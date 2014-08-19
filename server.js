@@ -34,12 +34,13 @@ server.pack.register({
 			
 			//JS
 			libraries: [
-		        __dirname + '/node_modules/jquery-browserify/lib/jquery.js'
+		        __dirname + '/node_modules/jquery-browserify/lib/jquery.js',
+		        __dirname + '/node_modules/bootstrap/dist/js/bootstrap.js'
 		    ],
 
     		//CSS
 			stylesheets: [
-				__dirname + '/public/bootstrap.css',
+				__dirname + '/node_modules/bootstrap/dist/css/bootstrap.css',
 				__dirname + '/public/app.css',
 			],
 
