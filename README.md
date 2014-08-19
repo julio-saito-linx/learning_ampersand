@@ -2,10 +2,10 @@ Aprendendo Ampersand.js
 =======================
 Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
-![Aprendendo_Ampersand][github]
 
-##Instalações iniciais
+
 =====================
+##Instalações iniciais
 ####npm
 ```
 npm init
@@ -31,8 +31,9 @@ npm i getconfig --save
 
 
 
-##Main App, Router...
 =====================
+##Main App, Router...
+
 ####/client/app.js
  - Ponto de entrada da aplicação
  - Cria uma variável global chamada app, que podemos chamar de qualquer lugar
@@ -50,8 +51,11 @@ npm i getconfig --save
 
 
 
-##Views
+
+
 =====================
+##Views
+
 ####/client/view/main.js
  - View principal, possui o body, por exemplo.
  - Vai conter todas as outras views dentro dela
