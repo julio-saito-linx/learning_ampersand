@@ -4,28 +4,48 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
 
 ## Indice
+* [Human Javascript](#human-javascript)
 * [Instalacao](#instalacao)
 * [Main App](#main-app)
 * [Views](#views)
 
 
 =====================
+## Human Javascript
+
+Human Javascript é uma técnica, um livro, um guia de boas práticas escrito por [@HenrikJoreteg](https://twitter.com/henrikjoreteg). De nada vale escrever um código incrível e complicado se só quem fez poderá dar manutenção. Devemos escrever código para seres humanos.
+
+Um [exemplo](http://read.humanjavascript.com/ch03-code-for-humans.html) do livro:
+```javascript
+
+// ruim
+var hasHello = ~myArray.indexOf('hello')
+
+// melhor
+var hasHello = myArray.indexOf('hello') !== -1
+
+// ainda melhor
+var hasHello = _(myArray).contains('hello')
+```
+
+Seguindo esse princípio de que tudo deve ser claro em pequenos módulos, Henrik criou o [Ampersand](http://ampersandjs.com/). O foco é utilizar pequenos módulos independentes para se montar aplicações web. Tudo no browser e focado em convenções. Parecido com o backbone.js porém mais focado em produtividade, praticidade, legibilidade e manutenibilidade.
+
+=====================
 ## Instalacao
 ####npm
-```
+```shell
 npm init
 
-# Mogger
+# Mogger (esse é o meu logger)
 npm i mogger lodash --save
 
-# HAPI
+# HAPI (servidor web que aguenta cargas monstruosas)
 npm i hapi moonboots_hapi  --save
 
 # Ampersand
 npm i ampersand ampersand-view domready --save
 npm i ampersand-router --save
 npm i getconfig --save
-
 ```
 
 ####MoonBoots
