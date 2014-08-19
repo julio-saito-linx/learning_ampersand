@@ -4,13 +4,13 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
 
 ## Indice
-* [Instalações iniciais](#instalacao)
-* [Main App, Router](#main-app)
+* [Instalação](#instalacao)
+* [Main App](#main-app)
 * [Views](#views)
 
 
 =====================
-## Instalações iniciais
+## Instalação
 ####npm
 ```
 npm init
@@ -37,7 +37,7 @@ npm i getconfig --save
 
 
 =====================
-## Main App, Router
+## Main App
 
 ####/client/app.js
  - Ponto de entrada da aplicação
