@@ -36,10 +36,10 @@ Seguindo esse princípio de que tudo deve ser claro em pequenos módulos, Henrik
 =====================
 ## Instalacao
 ####npm
-```shell
+```bash
 npm init
 
-# Mogger (esse é o meu logger)
+# Mogger (meu logger querido)
 npm i mogger lodash --save
 
 # HAPI (servidor web que aguenta cargas monstruosas)
@@ -48,8 +48,10 @@ npm i hapi moonboots_hapi  --save
 ## Ampersand
 # configs
 npm i getconfig --save
+
 # router
 npm i ampersand-router --save
+
 # views
 npm i ampersand ampersand-view domready --save
 npm i templatizer --save
