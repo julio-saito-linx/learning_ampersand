@@ -1,14 +1,22 @@
 'use strict';
 var View = require('ampersand-view');
 var ViewSwitcher = require('ampersand-view-switcher');
+var templates = require('../templates');
+
 
 module.exports = View.extend({
-	template: '<body><div class="container"><h1>Aprendendo Ampersand.js</h1><main role="page-container"></main></div></body>',
+	template: templates.body,
 
 	autoRender: true,
+
+	// eventos globais
+	events:{
+		//qualquer click num link será capturado
+		'click a[href]': 'handleLinkClick'
+	},
 	
 	initialize: function() {
-		this.listenTo(app.router, 'page', this.handleNewPage)
+		this.listenTo(app.router, 'page', this.handleNewPage);
 	},
 
 	render: function() {
@@ -26,5 +34,25 @@ module.exports = View.extend({
 
 	handleNewPage: function(page) {
 		this.pages.set(page);
+	},
+
+	// Qualquer click num link <a href=":::"> será capturado
+	handleLinkClick: function (e) {
+		var localTarget = e.target.host === window.location.host;
+		if (localTarget) {
+			// apenas links locais serão modificados
+			
+			// "http://localhost:8888/list"
+			var fullNewLocation = e.target.href; 
+			
+			// "/list"
+			var partialNewLocation = e.target.href.replace('http://' + e.target.host, '');
+			
+			app.router.history.navigate(partialNewLocation, { trigger:true });
+
+			// não permite que seja propagado
+			e.preventDefault();
+			return false;
+		}
 	}
 });
