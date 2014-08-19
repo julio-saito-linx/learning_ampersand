@@ -15,7 +15,16 @@ server.pack.register({
 		// esta configuração é enviada para o plugin moonboots_hapi
 		moonboots: {
 			main: __dirname + '/client/app.js',
-			developmentMode: config.isDev
+			developmentMode: config.isDev,
+			//CSS
+			stylesheets: [
+				__dirname + '/public/bootstrap.css'
+			],
+
+			//compila o template
+			beforeBuildJS: function() {
+
+			}
 		}
 	}
 }, function() {

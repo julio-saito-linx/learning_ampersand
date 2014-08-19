@@ -3,7 +3,7 @@ var View = require('ampersand-view');
 var ViewSwitcher = require('ampersand-view-switcher');
 
 module.exports = View.extend({
-	template: '<body><h1>Aprendendo Ampersand.js</h1><main role="page-container"></main></body>',
+	template: '<body><div class="container"><h1>Aprendendo Ampersand.js</h1><main role="page-container"></main></div></body>',
 
 	autoRender: true,
 	

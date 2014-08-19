@@ -42,10 +42,14 @@ npm i mogger lodash --save
 # HAPI (servidor web que aguenta cargas monstruosas)
 npm i hapi moonboots_hapi  --save
 
-# Ampersand
-npm i ampersand ampersand-view domready --save
-npm i ampersand-router --save
+## Ampersand
+# configs
 npm i getconfig --save
+# router
+npm i ampersand-router --save
+# views
+npm i ampersand ampersand-view domready --save
+npm i templatizer --save
 ```
 
 ####MoonBoots
@@ -88,10 +92,10 @@ npm i getconfig --save
  - Escuta o evento geral e usando o ViewSwitcher, carrega as páginas que o router mandar
 
 ####Views possem seletores
-```
- get('#elementId')     => $('#elementId')[0]
- getAll('.className')  => $('.className')
- getByRole('roleName') => $('[role=roleName]')[0]
+```javascript
+ get('#elementId')     // $('#elementId')[0]
+ getAll('.className')  // $('.className')
+ getByRole('roleName') // $('[role=roleName]')[0]
 ```
 
 ####/client/pages/ ... home.js, ...
