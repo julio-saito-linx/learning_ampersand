@@ -52,11 +52,17 @@ npm i ampersand ampersand-view domready --save
 npm i templatizer --save
 ```
 
-####MoonBoots
+####[moonboots](https://github.com/HenrikJoreteg/moonboots)
  - Exibe apenas um script na saída
  - Quando em developmentMode, envia o javascript e o CSS sem compactação
  - Quando em developmentMode=false, os arquivos são minificados
  - Quando em developmentMode=false, o nome dos arquivos é alterados quando ocorre alguma mudança
+
+####[templatizer](https://github.com/HenrikJoreteg/templatizer)
+ - Compila templates JADE para templates com funções javascript leves
+ - Dois parametros
+     + origiem dos templates JADE
+     + destino do arquivo JS
 
 
 

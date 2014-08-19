@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "restartable": "r",
+  "ignore": ["client/templates.js"],
+  "ext": "js jade json"
+}
