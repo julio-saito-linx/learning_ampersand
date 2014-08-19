@@ -4,13 +4,13 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
 
 ## Indice
-* [Instalação](#instalacao)
+* [Instalacao](#instalacao)
 * [Main App](#main-app)
 * [Views](#views)
 
 
 =====================
-## Instalação
+## Instalacao
 ####npm
 ```
 npm init
