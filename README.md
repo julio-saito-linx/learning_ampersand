@@ -35,8 +35,7 @@ Seguindo esse princípio de que tudo deve ser claro em pequenos módulos, Henrik
 
 =====================
 ## Instalacao
-####npm
-```bash
+```shell
 npm init
 
 # Mogger (meu logger querido)
@@ -72,6 +71,10 @@ npm i templatizer --save
 ####[stylizer](https://github.com/HenrikJoreteg/templatizer)
  - Compila templates .styl para um css geral
  - Compatível com [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related) 
+
+
+
+
 =====================
 ## Main App
 
