@@ -3,9 +3,14 @@ Aprendendo Ampersand.js
 Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
 
+## Indice
+* [Instalações iniciais](#instalacao)
+* [Main App, Router](#main-app)
+* [Views](#views)
+
 
 =====================
-##Instalações iniciais
+## Instalações iniciais
 ####npm
 ```
 npm init
@@ -32,7 +37,7 @@ npm i getconfig --save
 
 
 =====================
-##Main App, Router...
+## Main App, Router
 
 ####/client/app.js
  - Ponto de entrada da aplicação
@@ -54,7 +59,7 @@ npm i getconfig --save
 
 
 =====================
-##Views
+## Views
 
 ####/client/view/main.js
  - View principal, possui o body, por exemplo.
