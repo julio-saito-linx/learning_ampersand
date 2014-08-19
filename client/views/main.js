@@ -13,15 +13,22 @@ module.exports = View.extend({
 		//qualquer click num link será capturado
 		'click a[href]': 'handleLinkClick'
 	},
+
+	bindings: {
+		'model.fullName': {
+			type: 'text',
+			role: 'user-name'
+		}
+	},
 	
 	initialize: function() {
 		this.listenTo(app.router, 'page', this.handleNewPage);
-		this.listenTo(this.model, 'change:fullName', this.fullNameChanged);
+		// this.listenTo(this.model, 'change:fullName', this.fullNameChanged);
 	},
 
 	render: function() {
 		//http://ampersandjs.com/docs#ampersand-view-renderwithtemplate
-		this.renderWithTemplate();
+		this.renderWithTemplate(this.model);
 
 		// getByRole => this.$el.find('[role=page-container]')
 		var pageContainerElement = this.getByRole('page-container');
@@ -74,8 +81,8 @@ module.exports = View.extend({
 		};
 	},
 
-	fullNameChanged: function(ele, value) {
-		var pUserName = this.getByRole('user-name');
-		pUserName.innerHTML = value;
-	}
+	// fullNameChanged: function(ele, value) {
+	// 	var pUserName = this.getByRole('user-name');
+	// 	pUserName.innerHTML = value;
+	// }
 });
