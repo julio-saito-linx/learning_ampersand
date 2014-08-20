@@ -120,3 +120,38 @@ npm i templatizer --save
  - Pages são Views
  - Pages são utilizadas para organização
 
+
+
+=====================
+## Exemplo de uma rota
+
+ - bla, bla bla
+```javascript
+console.log
+```
+
+
+ - bla, bla bla
+```javascript
+console.log
+```
+
+
+
+ - bla, bla bla
+```javascript
+console.log
+```
+
+
+
+ - bla, bla bla
+```javascript
+console.log
+```
+
+
+ - bla, bla bla
+```javascript
+console.log
+```
