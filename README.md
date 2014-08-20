@@ -132,6 +132,8 @@ npm i templatizer --save
 
 ![ampersand routes example](https://docs.google.com/drawings/d/1GZpAldVcj94fVNrZdaLxn3TQbUGjnElPIOCbRJjheQ8/pub?w=728&amp;h=546)
 
+<img src="https://docs.google.com/drawings/d/1GZpAldVcj94fVNrZdaLxn3TQbUGjnElPIOCbRJjheQ8/pub?w=728&amp;h=546">
+
 ---
 ### 1- Link
 ```jade
