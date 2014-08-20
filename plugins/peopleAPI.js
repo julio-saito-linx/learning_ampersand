@@ -23,6 +23,7 @@ module.exports = new API({
     rootUrl: '/api/people',
     // hapi plugin name, defaults to 'api'
     name: 'fake-people-api',
+    delay: 2500,
     // hapi plugin version, defaults to '0.0.0',
     version: '0.0.1'
 });
