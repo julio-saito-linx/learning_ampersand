@@ -12,7 +12,7 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 * [Main App](#main-app)
 * [Views](#views)
 * [Passo-a-passo](#passo-a-passo)
-  + [Nova Rota e Pagina](#rotas-link-pagina)
+  + [Nova Rota e Pagina](#nova-rota-e-pagina)
 
 
 =====================
