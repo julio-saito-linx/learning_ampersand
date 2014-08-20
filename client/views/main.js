@@ -10,7 +10,10 @@ module.exports = View.extend({
 
 	// eventos globais
 	events:{
-		//qualquer click num link será capturado
+		
+		////
+		// qualquer click num link será capturado aqui
+		// na função handleLinkClick o click será filtrado
 		'click a[href]': 'handleLinkClick'
 	},
 

@@ -16,7 +16,7 @@
 
     // body.jade compiled template
     templatizer["body"] = function tmpl_body() {
-        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">body(view)</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">home</a></li><li><a href="/list/111">list/111</a></li></ul><p href="#" role="user-name" class="navbar-text navbar-right">some-user</p></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
+        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">body(view)</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">home</a></li><li><a href="/list/1">list/1</a></li><li><a href="/detail/1">detail/1</a></li></ul><p href="#" role="user-name" class="navbar-text navbar-right">some-user</p></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
     };
 
     // pages/home.jade compiled template
@@ -27,6 +27,11 @@
     // pages/list.jade compiled template
     templatizer["pages"]["list"] = function tmpl_pages_list() {
         return "<!DOCTYPE html><section><h1>LIST PAGE</h1><p>This is some list</p><ul><li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li></ul></section>";
+    };
+
+    // pages/person_detail.jade compiled template
+    templatizer["pages"]["person_detail"] = function tmpl_pages_person_detail() {
+        return '<div class="detail"><h1>Person Name</h1><p class="lead">His full name</p></div>';
     };
 
     return templatizer;

@@ -1,17 +1,41 @@
 'use strict';
+
+////
+// Servidor tipo express.js, porém muito simples e poderoso
 var hapi = require('hapi');
+
+////
+// faz a ligação entre o hapi e várias ferramentas 
+// como o stylizer e o templatizer
+// o Moonboots é o coração deste arquivo
 var moonboots = require('moonboots_hapi');
+
+////
+// pega configuração de um arquivo .json que varia de nome conforme
+// a variável de ambiente do node (NODE_ENV)
+// em desenvolvimento: dev_config.json
 var config = require('getconfig');
+
+////
+// lida com templates JADE -> HTML
 var templatizer = require('templatizer');
+
+////
+// lida com arquivos .styl -> CSS
 var stylizer = require('stylizer');
 
+////
 // cria o servidor do HAPI
 var server = hapi.createServer(config.port, config.host_name);
 
-// fake: um servidor de pessoas
+////
+// # peopleAPI
+// fake server: servidor de entidades pessoas
 var peopleAPI = require('./plugins/peopleAPI');
 
-// fake: um servidor de autenticação 
+////
+// # fakeLoginAPI
+// fake server: servidor de entidades pessoas
 server.route({
 	method: 'GET',
 	path: '/api/me',
@@ -26,10 +50,10 @@ server.route({
 })
 
 server.pack.register([
-	//plugin 1
-	peopleAPI,
-	
-	//plugin 2
+
+	////
+	// # moobboots_hapi (hapi-dummy-api)
+	// plugin 1
 	{
 		plugin: moonboots,
 		options: {
@@ -81,7 +105,14 @@ server.pack.register([
 
 			}
 		}
-	}
+	},
+
+	////
+	// # peopleAPI
+	// plugin 2
+	// fake server: servidor de usuário logado(me) e autenticação
+	peopleAPI
+
 ], function () {
 		server.start();
 		console.log('running server on http://' + config.host_name + ':' + config.port);
