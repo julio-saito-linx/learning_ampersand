@@ -125,9 +125,10 @@ npm i templatizer --save
 =====================
 ## Exemplo de uma rota
 
- - bla, bla bla
-```javascript
-console.log
+ - /templates/body.jade
+```jade
+li
+    a(href='/dois') dois
 ```
 
 
