@@ -77,7 +77,10 @@ module.exports = View.extend({
 		var aTags = this.getAll('.nav a');
 		for (var i = aTags.length - 1; i >= 0; i--) {
 		 	var aTag = aTags[i];
-		 	if(current_pathname.indexOf(aTag.pathname) >= 0 ){
+		 	var newPathname = aTag.pathname.replace(/\/$/g, '');
+
+		 	var isCurrentPath = (current_pathname.indexOf(newPathname) >= 0);
+		 	if( isCurrentPath ){
 		 		$(aTag).parent().addClass('active');
 		 		break;
 		 	}

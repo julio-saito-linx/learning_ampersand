@@ -130,11 +130,11 @@ _.assign(MoggerTracer.prototype, {
 			pointcut: /renderWithTemplate/
 		});
 
-		this.tracer.traceObj({
-			before: {	message: 'Router', css: 'color: #55A' },
-			target: 'Router.prototype', targetConfig: {	css: 'color: #55A' },
-			pointcut: /trigger/
-		});
+		// this.tracer.traceObj({
+		// 	before: {	message: 'Router', css: 'color: #55A' },
+		// 	target: 'Router.prototype', targetConfig: {	css: 'color: #55A' },
+		// 	pointcut: /./
+		// });
 
 		this.tracer.traceObj({
 			before: {	message: 'ViewSwitcher', css: 'color: #555' },

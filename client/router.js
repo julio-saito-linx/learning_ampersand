@@ -8,11 +8,25 @@ var UmDoisTresPage = require('./pages/um-dois-tres');
 module.exports = Router.extend({
 	routes: {
 		'': 'home',
-		'list/:id': 'list',
+		'list': 'list',
 		'detail/:id': 'detail',
-		'um/': 'um',
-		'dois/': 'dois',
-		'tres/': 'tres',
+		'um': 'um',
+		'dois': 'dois',
+		'tres': 'tres',
+	},
+
+	initialize: function() {
+		window.app.tracer.addSurrogateAndTracer({
+			surrogateTarget: {
+				name: 'router',
+				instance: this
+			},
+			traceObj: {
+				before: {	message: 'router', css: 'color: #C42' },
+				target: 'router', targetConfig: {	css: 'color: #C42' },
+				pointcut: /./
+			}
+		});
 	},
 
 	home: function() {

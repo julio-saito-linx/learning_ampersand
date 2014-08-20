@@ -23,6 +23,7 @@ window.app = {
 
 		// Gerenciamento de Rotas
 		this.router = new Router();
+
 		
 		// mesma coisa que o $.ready
 		domready(this.start.bind(this));
@@ -31,7 +32,7 @@ window.app = {
 	start: function() {
 		// a view principal
 		// escuta o evento 'page' do router
-		var mainView = this.mainView = new MainView({
+		this.mainView = new MainView({
 			el: document.body,
 			model: window.me
 		});
@@ -39,14 +40,14 @@ window.app = {
 		this.tracer.addSurrogateAndTracer({
 			surrogateTarget: {
 				name: 'mainView',
-				instance: mainView
+				instance: this.mainView
 			},
 			traceObj: {
 				before: {	message: 'mainView', css: 'color: #C42' },
 				target: 'mainView', targetConfig: {	css: 'color: #C42' },
 				pointcut: /./
 			}
-		})
+		});
 
 		// inicia o router principal, lê a URL e casa com a configuração de rotas
 		// pushState: true -> para usar # (hashes)

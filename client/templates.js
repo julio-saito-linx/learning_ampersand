@@ -16,7 +16,7 @@
 
     // body.jade compiled template
     templatizer["body"] = function tmpl_body() {
-        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">body(view)</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">home</a></li><li><a href="/list/1">list/1</a></li><li><a href="/detail/1">detail/1</a></li><li><a href="/um">um</a></li><li><a href="/dois">dois</a></li><li><a href="/tres">três</a></li></ul><p href="#" role="user-name" class="navbar-text navbar-right">some-user</p></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
+        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">body(view)</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">home</a></li><li><a href="/list">list/1</a></li><li><a href="/detail/1">detail/1</a></li><li><a href="/um">um</a></li><li><a href="/dois">dois</a></li><li><a href="/tres">três</a></li></ul><p href="#" role="user-name" class="navbar-text navbar-right">some-user</p></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
     };
 
     // pages/home.jade compiled template
@@ -36,7 +36,7 @@
 
     // pages/um_dois_tres.jade compiled template
     templatizer["pages"]["um_dois_tres"] = function tmpl_pages_um_dois_tres() {
-        return '<h1>Um, dois, Tres</h1><ul><li><a href="/um">um</a></li><li><a href="/dois">dois</a></li><li><a href="/tres">tres</a></li></ul>';
+        return '<h1>Mudando as rotas!!<p><a href="/um">um</a></p><p><a href="/dois">dois</a></p><p><a href="/tres">tres</a></p></h1>';
     };
 
     return templatizer;
