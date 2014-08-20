@@ -17,7 +17,6 @@ var Me = require('../models/me');
 var HomePage = require('../pages/home');
 var ListPage = require('../pages/list');
 var Router = require('../router');
-
 var ViewSwitcher = require('ampersand-view-switcher');
 
 var surrogateTargetsSource = {
@@ -26,17 +25,25 @@ var surrogateTargetsSource = {
 	'HomePage.prototype': HomePage.prototype,
 	'ListPage.prototype': ListPage.prototype,
 	'Router.prototype': Router.prototype,
-	'ViewSwitcher.prototype': ViewSwitcher.prototype
+	'ViewSwitcher.prototype': ViewSwitcher.prototype,
+
 };
 // end/ all targets //////////////////////////////////////////
 
 
 
 var MoggerTracer = function (){};
+
 _.assign(MoggerTracer.prototype, { 
+	
+	addSurrogateAndTracer: function(opt) {
+		surrogateTargetsSource[opt.surrogateTarget.name] = opt.surrogateTarget.instance;
+		this.tracer.traceObj(opt.traceObj);
+	},
+
 	startTracing: function() {
 		// get the tracer
-		var tracer = new Mogger.Tracer({
+		this.tracer = new Mogger.Tracer({
 			//-------------------------------------------------------
 			// enable / disable
 			//-------------------------------------------------------
@@ -100,36 +107,36 @@ _.assign(MoggerTracer.prototype, {
 			Objects to trace
 			use pointcut: /./ to trace all functions
 		*/
-		tracer.traceObj({
+		this.tracer.traceObj({
 			before: {	message: 'MainView', css: 'color: #A42' },
 			target: 'MainView.prototype', targetConfig: {	css: 'color: #A42' },
 			pointcut: /renderWithTemplate/
 		});
 
-		tracer.traceObj({
+		this.tracer.traceObj({
 			before: {	message: 'Me', css: 'color: #2A2' },
 			target: 'Me.prototype', targetConfig: {	css: 'color: #2A2' },
 			pointcut: /./
 		});
 
-		tracer.traceObj({
+		this.tracer.traceObj({
 			before: {	message: 'HomePage', css: 'color: #A42' },
 			target: 'HomePage.prototype', targetConfig: {	css: 'color: #A42' },
 			pointcut: /renderWithTemplate/
 		});
-		tracer.traceObj({
+		this.tracer.traceObj({
 			before: {	message: 'ListPage', css: 'color: #A40' },
 			target: 'ListPage.prototype', targetConfig: {	css: 'color: #A40' },
 			pointcut: /renderWithTemplate/
 		});
 
-		tracer.traceObj({
+		this.tracer.traceObj({
 			before: {	message: 'Router', css: 'color: #55A' },
 			target: 'Router.prototype', targetConfig: {	css: 'color: #55A' },
 			pointcut: /trigger/
 		});
 
-		tracer.traceObj({
+		this.tracer.traceObj({
 			before: {	message: 'ViewSwitcher', css: 'color: #555' },
 			target: 'ViewSwitcher.prototype', targetConfig: {	css: 'color: #555' },
 			pointcut: /(_show|render)/

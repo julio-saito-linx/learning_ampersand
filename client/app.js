@@ -18,8 +18,8 @@ window.app = {
 		window.me = new Me();
 
 		// Mogger
-		var tracer = new Tracer();
-		tracer.startTracing();
+		this.tracer = new Tracer();
+		this.tracer.startTracing();
 
 		// Gerenciamento de Rotas
 		this.router = new Router();
@@ -31,10 +31,22 @@ window.app = {
 	start: function() {
 		// a view principal
 		// escuta o evento 'page' do router
-		this.mainView = new MainView({
+		var mainView = this.mainView = new MainView({
 			el: document.body,
 			model: window.me
 		});
+
+		this.tracer.addSurrogateAndTracer({
+			surrogateTarget: {
+				name: 'mainView',
+				instance: mainView
+			},
+			traceObj: {
+				before: {	message: 'mainView', css: 'color: #C42' },
+				target: 'mainView', targetConfig: {	css: 'color: #C42' },
+				pointcut: /./
+			}
+		})
 
 		// inicia o router principal, lê a URL e casa com a configuração de rotas
 		// pushState: true -> para usar # (hashes)
