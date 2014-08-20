@@ -145,12 +145,16 @@ _/templates/body.jade_
 ---
 ### 2- Rota
 ```javascript
+var DoisPage = require('./pages/dois');
+//...
+
 routes: {
     '': 'home',
     //...
 
     'dois': 'dois',
 },
+//...
 
 dois: function() {
     this.trigger('page', new DoisPage());
