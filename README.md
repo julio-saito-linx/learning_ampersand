@@ -127,8 +127,7 @@ npm i templatizer --save
 
  - /templates/body.jade
 ```jade
-li
-    a(href='/dois') dois
+a(href='/dois') dois
 ```
 
 
