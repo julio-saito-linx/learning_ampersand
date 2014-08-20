@@ -125,12 +125,19 @@ npm i templatizer --save
 =====================
 ## Nova Rota - Passo a Passo
 
+
+
+---
+### 1- Link
 ```jade
 a(href='/dois') dois
 ```
 _/templates/body.jade_
 
+
+
 ---
+### 2- Rota
 ```javascript
 routes: {
     '': 'home',
@@ -145,7 +152,11 @@ dois: function() {
 ```
 _/client/router.js_
 
+
+
 ---
+### 3- Página
+##### page === Ampersand.View
 ```javascript
 'use strict';
 var View = require('ampersand-view');
@@ -158,10 +169,12 @@ module.exports = View.extend({
 ```
 _/client/pages/dois.js_
 
+
+
+
 ---
+### 4- Template da página
 ```jade
 h1 Eu sou a página "Dois"
 ```
 _/templates/pages/dois.jade_
-
- 
