@@ -12,7 +12,7 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 * [Main App](#main-app)
 * [Views](#views)
 * [Passo-a-passo](#passo-a-passo)
-  + [Rota, Link e Nova Pagina](#rotas-link-pagina)
+  + [Nova Rota e Pagina](#rotas-link-pagina)
 
 
 =====================
@@ -128,7 +128,7 @@ npm i templatizer --save
 # Passo-a-passo
 
 
-## Rota, Link e Nova Pagina
+## Nova Rota e Pagina
 ---
 ### 1- Link
 ```jade
