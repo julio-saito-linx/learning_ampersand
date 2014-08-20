@@ -84,7 +84,7 @@ module.exports = View.extend({
 		 		$(aTag).parent().addClass('active');
 		 		break;
 		 	}
-		};
+		}
 	},
 
 	// fullNameChanged: function(ele, value) {

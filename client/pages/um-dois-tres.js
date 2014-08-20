@@ -28,11 +28,11 @@ module.exports = View.extend({
 		 	
 		 	var linkApontaPaginaAtual = current_pathname.indexOf(aTag.pathname) >= 0;
 		 	if ( linkApontaPaginaAtual ) {
-		 		$(aTag).css('font-weight', 'bold');
+				$(aTag).css('font-weight', 'bold');
 		 	}
 		 	else {
-		 		$(aTag).css('font-weight', 'normal');
+	  			$(aTag).css('font-weight', 'normal');
 		 	}
-		};
+		}
 	},
 });

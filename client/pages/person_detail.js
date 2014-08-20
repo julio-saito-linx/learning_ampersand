@@ -5,7 +5,7 @@ var templates = require('../templates');
 module.exports = View.extend({
 	template: templates.pages.person_detail,
 	autoRender: true,
-	initialize: function(id) {
-		console.log(arguments)
+	initialize: function(/* id */) {
+		console.log(arguments);
 	}
 });
