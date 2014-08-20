@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "ampersand": "^1.10.0",
+    "ampersand-collection-view": "^1.0.10",
     "ampersand-dom": "^1.2.1",
     "ampersand-model": "^4.0.1",
     "ampersand-rest-collection": "^2.0.1",

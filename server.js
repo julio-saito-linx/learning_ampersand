@@ -45,9 +45,9 @@ server.route({
 			givenName: 'Julio',
 			familyName: 'Saito',
 			email: 'saitodisse@gmail.com'
-		})
+		});
 	}
-})
+});
 
 server.pack.register([
 
@@ -100,7 +100,7 @@ server.pack.register([
 						outfile:	 __dirname + '/public/app.css',
 						development: true,
 						watch:       __dirname + '/public/app/**/*.styl'
-					}, done)
+					}, done);
 				}
 
 			}
