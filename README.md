@@ -131,6 +131,7 @@ npm i templatizer --save
 ## Nova Rota e Pagina
 
 <img src="https://docs.google.com/drawings/d/1GZpAldVcj94fVNrZdaLxn3TQbUGjnElPIOCbRJjheQ8/pub?w=1440&amp;h=1080">
+https://docs.google.com/drawings/d/1GZpAldVcj94fVNrZdaLxn3TQbUGjnElPIOCbRJjheQ8/edit?usp=sharing
 
 ---
 ### 1- Link
