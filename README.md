@@ -123,35 +123,45 @@ npm i templatizer --save
 
 
 =====================
-## Exemplo de uma rota
+## Nova Rota - Passo a Passo
 
-/templates/body.jade
 ```jade
 a(href='/dois') dois
 ```
+_/templates/body.jade_
 
-
- - bla, bla bla
+---
 ```javascript
-console.log
+routes: {
+    '': 'home',
+    //...
+
+    'dois': 'dois',
+},
+
+dois: function() {
+    this.trigger('page', new DoisPage());
+},
 ```
+_/client/router.js_
 
-
-
- - bla, bla bla
+---
 ```javascript
-console.log
+'use strict';
+var View = require('ampersand-view');
+var templates = require('../templates');
+
+module.exports = View.extend({
+    template: templates.pages.dois,
+    autoRender: true
+});
 ```
+_/client/pages/dois.js_
 
-
-
- - bla, bla bla
-```javascript
-console.log
+---
+```jade
+h1 Eu sou a página "Dois"
 ```
+_/templates/pages/dois.jade_
 
-
- - bla, bla bla
-```javascript
-console.log
-```
+ 
