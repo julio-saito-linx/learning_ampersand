@@ -11,6 +11,8 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
   + [stylizer](#stylizer)
 * [Main App](#main-app)
 * [Views](#views)
+* [Passo-a-passo](#passo-a-passo)
+  + [Rota, Link e Nova Pagina](#rotas-link-pagina)
 
 
 =====================
@@ -123,10 +125,10 @@ npm i templatizer --save
 
 
 =====================
-## Nova Rota - Passo a Passo
+# Passo-a-passo
 
 
-
+## Rota, Link e Nova Pagina
 ---
 ### 1- Link
 ```jade
