@@ -130,9 +130,7 @@ npm i templatizer --save
 
 ## Nova Rota e Pagina
 
-
-[ampersand routes example](https://docs.google.com/drawings/d/1GZpAldVcj94fVNrZdaLxn3TQbUGjnElPIOCbRJjheQ8/pub?w=960&amp;h=720)
-
+![ampersand routes example](https://docs.google.com/drawings/d/1GZpAldVcj94fVNrZdaLxn3TQbUGjnElPIOCbRJjheQ8/pub?w=960&amp;h=720)
 
 ---
 ### 1- Link
