@@ -15,7 +15,7 @@ var _ = require('lodash');
 var MainView = require('../views/main');
 var Me = require('../models/me');
 var HomePage = require('../pages/home');
-var ListPage = require('../pages/list');
+var UsersListPage = require('../pages/users-list');
 var Router = require('../router');
 var ViewSwitcher = require('ampersand-view-switcher');
 
@@ -23,7 +23,7 @@ var surrogateTargetsSource = {
 	'MainView.prototype': MainView.prototype,
 	'Me.prototype': Me.prototype,
 	'HomePage.prototype': HomePage.prototype,
-	'ListPage.prototype': ListPage.prototype,
+	'UsersListPage.prototype': UsersListPage.prototype,
 	'Router.prototype': Router.prototype,
 	'ViewSwitcher.prototype': ViewSwitcher.prototype,
 
@@ -125,8 +125,8 @@ _.assign(MoggerTracer.prototype, {
 			pointcut: /renderWithTemplate/
 		});
 		this.tracer.traceObj({
-			before: {	message: 'ListPage', css: 'color: #A40' },
-			target: 'ListPage.prototype', targetConfig: {	css: 'color: #A40' },
+			before: {	message: 'UsersListPage', css: 'color: #A40' },
+			target: 'UsersListPage.prototype', targetConfig: {	css: 'color: #A40' },
 			pointcut: /renderWithTemplate/
 		});
 

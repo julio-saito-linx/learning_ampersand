@@ -4,3 +4,17 @@ body {
 .main {
   margin-top: 70px;
 }
+.users-list {
+  width: 300px;
+}
+@media (min-width: 768px) {
+  .users-list {
+    padding: 5px 0;
+  }
+  .users-list table {
+    margin-left: 40px;
+  }
+  .users-list td {
+    padding: 5px 0;
+  }
+}

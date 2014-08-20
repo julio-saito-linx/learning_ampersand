@@ -3,6 +3,7 @@ var MainView = require('./views/main');
 var Router = require('./router');
 var Tracer = require('./tracer/mogger-tracer');
 var Me = require('./models/me');
+var Persons = require('./models/persons');
 
 // espera que a página esteja carregada e chama o callback
 // o mesmo que utilizar o $.ready(function() { ... })
@@ -16,6 +17,9 @@ window.app = {
 		// este modelo guarda as informações do usuário que está logado
 		// por isso, para facilitar, ele é global
 		window.me = new Me();
+
+		// data collections
+		this.persons = new Persons();
 
 		// Mogger
 		this.tracer = new Tracer();
