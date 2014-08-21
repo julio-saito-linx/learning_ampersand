@@ -22,7 +22,7 @@ module.exports = View.extend({
 						
 						this.collection.create(data, {
 							success: function() {
-								window.app.router.history.navigate('/users', { trigger:true });
+								window.app.navigate('/users');
 							},
 							error: function(err) {
 								throw err;

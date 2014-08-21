@@ -61,6 +61,10 @@ window.app = {
 		// pushState: true -> para usar # (hashes)
 		// para forçar alguma navegação use o this.router.history.navigate(url, {trigger: true})
 		this.router.history.start({pushState: true});
+	},
+
+	navigate: function(url) {
+		window.app.router.history.navigate(url, { trigger:true });		
 	}
 };
 
