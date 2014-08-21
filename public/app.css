@@ -4,7 +4,7 @@ body {
 .main {
   margin-top: 70px;
 }
-.users-list {
+.users_list {
   width: 300px;
 }
 .page.user-view img {
@@ -16,13 +16,13 @@ body {
   margin: 10px 67px;
 }
 @media (min-width: 768px) {
-  .users-list {
+  .users_list {
     padding: 5px 0;
   }
-  .users-list table {
+  .users_list table {
     margin-left: 40px;
   }
-  .users-list td {
+  .users_list td {
     padding: 5px 0;
   }
 }

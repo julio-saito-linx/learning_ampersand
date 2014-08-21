@@ -17,12 +17,12 @@
 
     // body.jade compiled template
     templatizer["body"] = function tmpl_body() {
-        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">body(view)</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">home</a></li><li><a href="/users">users</a></li><li><a href="/users/1">users/1</a></li><li><a href="/um">um</a></li><li><a href="/dois">dois</a></li><li><a href="/tres">três</a></li></ul><p href="#" role="user-name" class="navbar-text navbar-right">some-user</p></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
+        return '<body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">body(view)</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="active"><a href="/">home</a></li><li><a href="/users">users</a></li><li><a href="/users/create">new user</a></li><li><a href="/um">rota um</a></li><li><a href="/dois">rota dois</a></li><li><a href="/tres">rota três</a></li></ul><p href="#" role="user-name" class="navbar-text navbar-right">some-user</p></div></div></div><div class="container"><div role="page-container" class="main"></div></div></body>';
     };
 
     // includes/user.jade compiled template
     templatizer["includes"]["user"] = function tmpl_includes_user() {
-        return '<tr><td><span role="user-fullName-item"></span></td><td><a role="action-user-view" class="btn btn-default">View</a></td><td><a role="action-delete-user" class="btn btn-default">Delete</a></td></tr>';
+        return '<tr><td><span role="user-fullName-item"></span></td><td><a role="action-user-view" class="btn btn-default">View</a></td><td><a role="action-user-edit" class="btn btn-default">Edit</a></td><td><a role="action-delete-user" class="btn btn-default">Delete</a></td></tr>';
     };
 
     // pages/home.jade compiled template
@@ -45,6 +45,11 @@
         return '<section class="page user-create"><h1>Create a new user</h1><form role="user-form"><fieldset role="field-container"></fieldset><button type="submit" class="btn btn-primary">Save</button></form></section>';
     };
 
+    // pages/user_edit.jade compiled template
+    templatizer["pages"]["user_edit"] = function tmpl_pages_user_edit() {
+        return '<section class="page user-edit"><h1>Edit User</h1><form role="user-form"><fieldset role="field-container"></fieldset><button type="submit" class="btn btn-primary">Save changes</button></form></section>';
+    };
+
     // pages/user_view.jade compiled template
     templatizer["pages"]["user_view"] = function tmpl_pages_user_view() {
         return '<section class="page user-view"><img role="user_avatar" width="50" height="50"/><p role="user_fullname"></p><p role="user_awesomeness"></p></section>';
@@ -52,7 +57,7 @@
 
     // pages/users_list.jade compiled template
     templatizer["pages"]["users_list"] = function tmpl_pages_users_list() {
-        return '<!DOCTYPE html><section><h1>Users</h1><div class="users-list"><table role="users-list" class="table table-striped"></table></div></section>';
+        return '<!DOCTYPE html><section><h1>Users</h1><div class="users_list"><table role="users_list" class="table table-striped"></table></div></section>';
     };
 
     return templatizer;

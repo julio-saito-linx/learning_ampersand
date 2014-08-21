@@ -2,7 +2,7 @@
 var FormView = require('ampersand-form-view');
 var InputView = require('ampersand-input-view');
 
-module.exports = FormView.extend({
+module.exports = FormView.extend({ 
 	fields: function() {
 		return [
 			new InputView({
@@ -11,6 +11,10 @@ module.exports = FormView.extend({
 				placeholder: 'Mario',
 				parent: this,
 				require: true,
+				
+				// caso em mode de criação, o model ainda não existe
+				value: this.model && this.model.givenName,
+
 				tests: [
 					function(val) {
 						if (val.length < 3) {
@@ -25,6 +29,10 @@ module.exports = FormView.extend({
 				placeholder: 'Bros',
 				parent: this,
 				require: true,
+				
+				// caso em mode de criação, o model ainda não existe
+				value: this.model && this.model.familyName,
+				
 				tests: [
 					function(val) {
 						if (val.length < 3) {

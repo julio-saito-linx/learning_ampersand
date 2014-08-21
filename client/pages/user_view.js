@@ -2,6 +2,12 @@
 var View = require('ampersand-view');
 var templates = require('../templates');
 
+//// ----------------------------------
+// this             = UserViewPage
+// this.model       = PersonModel
+// this.collection  = PersonsCollection
+// ------------------------------------
+
 module.exports = View.extend({
 	template: templates.pages.user_view,
 	
@@ -20,10 +26,17 @@ module.exports = View.extend({
 			role: 'user_fullname'
 		},
 
+		// viewUrl: [Person] Models's derived property
 		'model.viewUrl': {
 			type: 'attribute',
 			name: 'href',
 			role: 'action-user-view'
+		},
+
+		'model.editUrl': {
+			type: 'attribute',
+			name: 'href',
+			role: 'action-user-edit'
 		},
 
 	},
