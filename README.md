@@ -4,8 +4,7 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
 ## TODO
 
-[] deixar os nomes de variáveis e arquivos no mesmo padrão
-
+- [ ] padronizar nomes de variáveis e arquivos
   - Views
     + UserView ("classe")
     + userView ("instancia")
