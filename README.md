@@ -1,23 +1,6 @@
 Aprendendo Ampersand.js
 =======================
 Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
-
-## TODO
-
-- [ ] padronizar nomes de variáveis e arquivos
-  - Views
-    + UserView ("classe")
-    + userView ("instancia")
-    + user-view ("roles")
-
-  - Pages
-    + UserDetailPage ("classe")
-    + userDetailPage ("instancia")
-    + user-page ("roles")
-
-
-
-
 ## Indice
 * [Human Javascript](#human-javascript)
 * [Instalacao](#instalacao)
@@ -28,6 +11,7 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 * [Views](#views)
 * [Passo-a-passo](#passo-a-passo)
   + [Nova Rota e Pagina](#nova-rota-e-pagina)
+* [TODO](#todo)
 
 
 =====================
@@ -203,3 +187,33 @@ _/client/pages/dois.js_
 h1 Eu sou a página "Dois"
 ```
 _/templates/pages/dois.jade_
+
+
+
+## TODO
+- [ ] padronizar nomes de variáveis e arquivos
+  - Views
+    + user_view ("arquivo")
+    + UserView ("classe")
+    + userView ("instancia")
+    + role='user_view' ("roles")
+    + user_view_template ("template jade")
+
+  - Pages
+    + user_page ("arquivo")
+    + UserDetailPage ("classe")
+    + userDetailPage ("instancia")
+    + user_page ("roles")
+    + user_page ("roles")
+
+  - Models
+    + user_model ("arquivo")
+    + UserModel ("classe")
+    + userModel ("instancia")
+  
+  - Collections
+    + user-collection ("arquivo")
+    + UserCollections ("classe")
+    + userCollections ("instancia")
+
+- [ ] criar gerador de arquivos ampersand (model, view, pages, routes...)
