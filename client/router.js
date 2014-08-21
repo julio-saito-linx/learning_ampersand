@@ -2,14 +2,14 @@
 var Router = require('ampersand-router');
 var HomePage = require('./pages/home');
 var UsersListPage = require('./pages/users-list');
-var PersonDetailPage = require('./pages/person_detail');
+var UserViewPage = require('./pages/user_view');
 var UmDoisTresPage = require('./pages/um-dois-tres');
 
 module.exports = Router.extend({
 	routes: {
 		'': 'home',
 		'users': 'users',
-		'detail/:id': 'detail',
+		'users/:id': 'user_view',
 		'um': 'um',
 		'dois': 'dois',
 		'tres': 'tres',
@@ -39,8 +39,11 @@ module.exports = Router.extend({
 		}));
 	},
 
-	detail: function(id) {
-		this.trigger('page', new PersonDetailPage({id: id}));
+	user_view: function(id) {
+		this.trigger('page', new UserViewPage({
+			id: Number(id),
+			collection: app.persons
+		}));
 	},
 
 	um: function() {

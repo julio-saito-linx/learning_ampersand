@@ -9,6 +9,21 @@ module.exports = View.extend({
 		'model.fullName': {
 			type: 'text',
 			role: 'user-fullName-item'
-		}
+		},
+
+		'model.viewUrl': {
+			type: 'attribute',
+			name: 'href',
+			role: 'action-user-view'
+		},
+
+	},
+
+	events: {
+		'click [role=action-delete-user]': 'handleDeleteClick'
+	},
+
+	handleDeleteClick: function() {
+		this.model.destroy();
 	}
 });

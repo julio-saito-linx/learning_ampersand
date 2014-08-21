@@ -9,11 +9,14 @@ module.exports = View.extend({
 	autoRender: true,
 	
 	initialize: function() {
-		this.collection.fetch();
+		if(!window.app.cachedCollection){
+			this.collection.fetch();
+			window.app.cachedCollection = this.collection;
+		}
 	},
 
 	render: function() {
 		this.renderWithTemplate();
-		this.renderCollection(this.collection, UserView, this.getByRole('users-list'));
+		this.renderCollection(window.app.cachedCollection, UserView, this.getByRole('users-list'));
 	}
 });

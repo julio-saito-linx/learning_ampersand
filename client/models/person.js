@@ -2,7 +2,7 @@
 var Model = require('ampersand-model');
 
 module.exports = Model.extend({
-	url: '/api/1',
+	//urlRoot: '/api/persons',
 
 	initialize: function() {
 		this.fetch();
@@ -13,7 +13,8 @@ module.exports = Model.extend({
 	props: {
 		id: 'number',
 		givenName: 'string',
-		familyName: 'string'
+		familyName: 'string',
+		awesomeness: 'number'
 	},
 
 	derived: {
@@ -21,6 +22,18 @@ module.exports = Model.extend({
 			deps: ['givenName', 'familyName'],
 			fn: function() {
 				return this.givenName + ' ' + this.familyName;
+			}
+		},
+		avatarUrl: {
+			deps: ['givenName'],
+			fn: function() {
+				return 'http://robohash.org/' + this.givenName;
+			}
+		},
+		viewUrl: {
+			deps: ['id'],
+			fn: function() {
+				return '/users/' + this.id;
 			}
 		}
 	}
