@@ -216,4 +216,7 @@ _/templates/pages/dois.jade_
     + UserCollections ("classe")
     + userCollections ("instancia")
 
-- [ ] criar gerador de arquivos ampersand (model, view, pages, routes...)
+- [x] criar gerador de arquivos ampersand (model, view, pages, routes...)
+  - Já existe o gerador oficial: https://github.com/AmpersandJS/ampersand#generating-stuff
+
+- [ ] Customizar para criar com os nomes sugeridos por mim
