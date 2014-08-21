@@ -4,35 +4,37 @@ var templates = require('../templates');
 
 module.exports = View.extend({
 
-	template: templates.pages.um_dois_tres,
-	
-	autoRender: true,
+    template: templates.pages.um_dois_tres,
 
-	initialize: function() {
-		this.listenTo(app.router, 'page', this.handleNewPage);
-	},
+    autoRender: true,
 
-	handleNewPage: function() {
-		this.updateActiveNav();
-	},
+    initialize: function () {
+        this.listenTo(window.app.router, 'page', this.handleNewPage);
+    },
 
-	updateActiveNav: function() {
-		var current_pathname = window.location.pathname;
-		
+    handleNewPage: function () {
+        this.updateActiveNav();
+    },
 
-		// pego todos os links do menu de tráz pra frente, assim o home,
-		// que é o menos especifico fica por último
-		var aTags = this.getAll('a');
-		for (var i = aTags.length - 1; i >= 0; i--) {
-		 	var aTag = aTags[i];
-		 	
-		 	var linkApontaPaginaAtual = current_pathname.indexOf(aTag.pathname) >= 0;
-		 	if ( linkApontaPaginaAtual ) {
-				$(aTag).css('font-weight', 'bold');
-		 	}
-		 	else {
-	  			$(aTag).css('font-weight', 'normal');
-		 	}
-		}
-	},
+    updateActiveNav: function () {
+        var current_pathname = window.location.pathname,
+            i,
+            aTag,
+            aTags,
+            linkApontaPaginaAtual;
+
+        // pego todos os links do menu de tráz pra frente, assim o home,
+        // que é o menos especifico fica por último
+        aTags = this.getAll('a');
+        for (i = aTags.length - 1; i >= 0; i -= 1) {
+            aTag = aTags[i];
+
+            linkApontaPaginaAtual = current_pathname.indexOf(aTag.pathname) >= 0;
+            if (linkApontaPaginaAtual) {
+                $(aTag).css('font-weight', 'bold');
+            } else {
+                $(aTag).css('font-weight', 'normal');
+            }
+        }
+    },
 });

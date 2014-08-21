@@ -6,66 +6,64 @@ var Me = require('./models/me');
 var Persons = require('./models/persons');
 
 // espera que a página esteja carregada e chama o callback
-// o mesmo que utilizar o $.ready(function() { ... })
+// o mesmo que utilizar o $.ready(function () { ... })
 var domready = require('domready');
 
 // arquivo de entrada "entry-point"
 window.app = {
-	init: function(){
+    init: function (){
 
-		// me = Model
-		// este modelo guarda as informações do usuário que está logado
-		// por isso, para facilitar, ele é global
-		window.me = new Me();
+        // me = Model
+        // este modelo guarda as informações do usuário que está logado
+        // por isso, para facilitar, ele é global
+        window.me = new Me();
 
-		// data collections
-		this.persons = new Persons();
+        // data collections
+        this.persons = new Persons();
 
-		// Mogger
-		this.tracer = new Tracer();
-		this.tracer.startTracing();
+        // Mogger
+        this.tracer = new Tracer();
+        this.tracer.startTracing();
 
-		// Gerenciamento de Rotas
-		this.router = new Router();
+        // Gerenciamento de Rotas
+        this.router = new Router();
 
-		
-		// mesma coisa que o $.ready
-		domready(this.start.bind(this));
-	},
+        // mesma coisa que o $.ready
+        domready(this.start.bind(this));
+    },
 
-	start: function() {
-		// a view principal
-		// escuta o evento 'page' do router
-		this.mainView = new MainView({
-			el: document.body,
-			model: window.me
-		});
+    start: function () {
+        // a view principal
+        // escuta o evento 'page' do router
+        this.mainView = new MainView({
+            el: document.body,
+            model: window.me
+        });
 
+        /*
+            MOGGER logger: MAIN VIEW
+        */
+        this.tracer.addSurrogateAndTracer({
+            surrogateTarget: {
+                name: 'mainView',
+                instance: this.mainView
+            },
+            traceObj: {
+                before: {    message: 'mainView', css: 'color: #C42' },
+                target: 'mainView', targetConfig: {    css: 'color: #C42' },
+                pointcut: /./
+            }
+        });
 
-		/*
-			MOGGER logger: MAIN VIEW
-		*/
-		this.tracer.addSurrogateAndTracer({
-			surrogateTarget: {
-				name: 'mainView',
-				instance: this.mainView
-			},
-			traceObj: {
-				before: {	message: 'mainView', css: 'color: #C42' },
-				target: 'mainView', targetConfig: {	css: 'color: #C42' },
-				pointcut: /./
-			}
-		});
+        // inicia o router principal, lê a URL e casa com a configuração de rotas
+        // pushState: true -> para usar # (hashes)
+        // para forçar alguma navegação use o this.router.history.navigate(url, {trigger: true})
+        this.router.history.start({pushState: true});
+    },
 
-		// inicia o router principal, lê a URL e casa com a configuração de rotas
-		// pushState: true -> para usar # (hashes)
-		// para forçar alguma navegação use o this.router.history.navigate(url, {trigger: true})
-		this.router.history.start({pushState: true});
-	},
-
-	navigate: function(url) {
-		window.app.router.history.navigate(url, { trigger:true });		
-	}
+    navigate: function (url) {
+        window.app.router.history.navigate(url, { trigger:true });
+    }
 };
 
 window.app.init();

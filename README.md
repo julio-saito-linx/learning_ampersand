@@ -13,7 +13,6 @@ Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
   + [Nova Rota e Pagina](#nova-rota-e-pagina)
 * [TODO](#todo)
 
-
 =====================
 ## Human Javascript
 
@@ -73,9 +72,6 @@ npm i templatizer --save
  - Compila templates .styl para um css geral
  - Compatível com [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related) 
 
-
-
-
 =====================
 ## Main App
 
@@ -92,11 +88,6 @@ npm i templatizer --save
  - Busca variável NODE_ENV
  - dev_config.json, production_config.json, ...
  - grava as informações em cookies para acesso no cliente
-
-
-
-
-
 
 =====================
 ## Views
@@ -121,11 +112,8 @@ npm i templatizer --save
  - Pages são Views
  - Pages são utilizadas para organização
 
-
-
 =====================
 # Passo-a-passo
-
 
 ## Nova Rota e Pagina
 
@@ -138,8 +126,6 @@ https://docs.google.com/drawings/d/1GZpAldVcj94fVNrZdaLxn3TQbUGjnElPIOCbRJjheQ8/
 a(href='/dois') dois
 ```
 _/templates/body.jade_
-
-
 
 ---
 ### 2- Rota
@@ -155,13 +141,11 @@ routes: {
 },
 //...
 
-dois: function() {
+dois: function () {
     this.trigger('page', new DoisPage());
 },
 ```
 _/client/router.js_
-
-
 
 ---
 ### 3- Página
@@ -178,17 +162,12 @@ module.exports = View.extend({
 ```
 _/client/pages/dois.js_
 
-
-
-
 ---
 ### 4- Template da página
 ```jade
 h1 Eu sou a página "Dois"
 ```
 _/templates/pages/dois.jade_
-
-
 
 ## TODO
 - [ ] padronizar nomes de variáveis e arquivos
@@ -210,7 +189,7 @@ _/templates/pages/dois.jade_
     + user_model ("arquivo")
     + UserModel ("classe")
     + userModel ("instancia")
-  
+
   - Collections
     + user-collection ("arquivo")
     + UserCollections ("classe")

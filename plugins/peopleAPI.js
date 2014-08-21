@@ -1,6 +1,5 @@
 var API = require('hapi-dummy-api');
 
-
 // all these config items are optionals
 module.exports = new API({
     // Optionally give it some starting data (should be an array)

@@ -10,28 +10,28 @@ var templates = require('../templates');
 // ------------------------------------
 
 module.exports = View.extend({
-	template: templates.pages.user_create,
+    template: templates.pages.user_create,
 
-	subviews: {
-		form: {
-			role: 'user-form',
-			prepareView: function() {
-				return new UserFormView({
-					el: this.el,
-					submitCallback: function(data) {
-						
-						this.collection.create(data, {
-							success: function() {
-								window.app.navigate('/users');
-							},
-							error: function(err) {
-								throw err;
-							}
-						});
-						
-					}.bind(this)
-				});
-			}
-		}
-	}
+    subviews: {
+        form: {
+            role: 'user-form',
+            prepareView: function () {
+                return new UserFormView({
+                    el: this.el,
+                    submitCallback: function (data) {
+
+                        this.collection.create(data, {
+                            success: function () {
+                                window.app.navigate('/users');
+                            },
+                            error: function (err) {
+                                throw err;
+                            }
+                        });
+
+                    }.bind(this)
+                });
+            }
+        }
+    }
 });
