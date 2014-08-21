@@ -2,6 +2,22 @@ Aprendendo Ampersand.js
 =======================
 Lições aprendidas no curso com vídeos: http://learn.humanjavascript.com/
 
+## TODO
+
+[] deixar os nomes de variáveis e arquivos no mesmo padrão
+
+  - Views
+    + UserView ("classe")
+    + userView ("instancia")
+    + user-view ("roles")
+
+  - Pages
+    + UserDetailPage ("classe")
+    + userDetailPage ("instancia")
+    + user-page ("roles")
+
+
+
 
 ## Indice
 * [Human Javascript](#human-javascript)
