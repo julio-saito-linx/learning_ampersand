@@ -7,6 +7,8 @@
     "ampersand": "^1.10.0",
     "ampersand-collection-view": "^1.0.10",
     "ampersand-dom": "^1.2.1",
+    "ampersand-form-view": "^1.0.2",
+    "ampersand-input-view": "^1.2.4",
     "ampersand-model": "^4.0.1",
     "ampersand-rest-collection": "^2.0.1",
     "ampersand-router": "^1.0.2",

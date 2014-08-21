@@ -3,30 +3,19 @@ var Router = require('ampersand-router');
 var HomePage = require('./pages/home');
 var UsersListPage = require('./pages/users-list');
 var UserViewPage = require('./pages/user_view');
+var UserCreatePage = require('./pages/user_create');
 var UmDoisTresPage = require('./pages/um-dois-tres');
+
 
 module.exports = Router.extend({
 	routes: {
 		'': 'home',
 		'users': 'users',
+		'users/create': 'users_create',
 		'users/:id': 'user_view',
 		'um': 'um',
 		'dois': 'dois',
 		'tres': 'tres',
-	},
-
-	initialize: function() {
-		window.app.tracer.addSurrogateAndTracer({
-			surrogateTarget: {
-				name: 'router',
-				instance: this
-			},
-			traceObj: {
-				before: {	message: 'router', css: 'color: #C42' },
-				target: 'router', targetConfig: {	css: 'color: #C42' },
-				pointcut: /./
-			}
-		});
 	},
 
 	home: function() {
@@ -44,6 +33,10 @@ module.exports = Router.extend({
 			id: Number(id),
 			collection: app.persons
 		}));
+	},
+
+	users_create: function() {
+		this.trigger('page', new UserCreatePage());
 	},
 
 	um: function() {

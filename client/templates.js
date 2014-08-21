@@ -40,6 +40,11 @@
         return '<h1>Mudando as rotas!!<p><a href="/um">um</a></p><p><a href="/dois">dois</a></p><p><a href="/tres">tres</a></p></h1>';
     };
 
+    // pages/user_create.jade compiled template
+    templatizer["pages"]["user_create"] = function tmpl_pages_user_create() {
+        return '<section class="page user-create"><h1>Create a new user</h1><form role="user-form"><fieldset role="field-container"></fieldset><button type="submit" class="btn btn-primary">Save</button></form></section>';
+    };
+
     // pages/user_view.jade compiled template
     templatizer["pages"]["user_view"] = function tmpl_pages_user_view() {
         return '<section class="page user-view"><img role="user_avatar" width="50" height="50"/><p role="user_fullname"></p><p role="user_awesomeness"></p></section>';

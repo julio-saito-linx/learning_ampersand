@@ -41,6 +41,10 @@ window.app = {
 			model: window.me
 		});
 
+
+		/*
+			MOGGER logger: MAIN VIEW
+		*/
 		this.tracer.addSurrogateAndTracer({
 			surrogateTarget: {
 				name: 'mainView',
